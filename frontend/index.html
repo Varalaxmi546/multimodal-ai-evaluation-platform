@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Multimodal AI Evaluation Platform</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="app-shell">
+
+    <!-- =========================================================
+         SIDEBAR
+         ========================================================= -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                AI
+            </div>
+
+            <div>
+                <h2>AI Evaluation</h2>
+                <span>Multimodal Platform</span>
+            </div>
+
+        </div>
+
+
+        <nav>
+
+            <button class="nav-item active" data-page="dashboard">
+                <span>⌂</span>
+                Dashboard
+            </button>
+
+            <button class="nav-item" data-page="text">
+                <span>▤</span>
+                Text Analysis
+            </button>
+
+            <button class="nav-item" data-page="image">
+                <span>▧</span>
+                Image Analysis
+            </button>
+
+            <button class="nav-item" data-page="pdf">
+                <span>▥</span>
+                PDF Analysis
+            </button>
+
+            <button class="nav-item" data-page="evaluation">
+                <span>◎</span>
+                Model Evaluation
+            </button>
+
+            <button class="nav-item" data-page="history">
+                <span>◷</span>
+                History
+            </button>
+
+        </nav>
+
+
+        <div class="sidebar-footer">
+
+            <span class="status-dot"></span>
+            Platform Ready
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================================================
+         MAIN
+         ========================================================= -->
+
+    <main class="main">
+
+
+        <!-- =====================================================
+             TOP BAR
+             ===================================================== -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1 id="page-title">
+                    Dashboard
+                </h1>
+
+                <p id="page-description">
+                    Analyze multimodal AI outputs and compare models.
+                </p>
+
+            </div>
+
+
+            <div class="health" id="health-status">
+                Checking...
+            </div>
+
+        </header>
+
+
+
+        <!-- =====================================================
+             DASHBOARD
+             ===================================================== -->
+
+        <section id="dashboard-page" class="page active">
+
+
+            <div class="welcome-card">
+
+                <div>
+
+                    <p class="eyebrow">
+                        MULTIMODAL AI
+                    </p>
+
+                    <h2>
+                        Analyze. Evaluate. Improve.
+                    </h2>
+
+                    <p>
+                        Test text, images, PDFs and AI model responses
+                        from one platform.
+                    </p>
+
+                    <button
+                        class="primary-btn"
+                        id="start-evaluation-btn">
+
+                        Start Evaluation
+
+                    </button>
+
+                </div>
+
+
+                <div class="hero-symbol">
+                    ✦
+                </div>
+
+            </div>
+
+
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <span>
+                        Total Analyses
+                    </span>
+
+                    <strong id="total-analyses">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span>
+                        Model Evaluations
+                    </span>
+
+                    <strong id="total-evaluations">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span>
+                        Text Analyses
+                    </span>
+
+                    <strong id="text-analyses">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span>
+                        Image / PDF
+                    </span>
+
+                    <strong id="media-analyses">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <h3>
+                        Quick Actions
+                    </h3>
+
+                    <span>
+                        Choose an analysis type
+                    </span>
+
+                </div>
+
+
+                <div class="quick-grid">
+
+                    <button
+                        class="action-card"
+                        data-page="text">
+
+                        <b>
+                            Text
+                        </b>
+
+                        <small>
+                            Analyze written content
+                        </small>
+
+                    </button>
+
+
+                    <button
+                        class="action-card"
+                        data-page="image">
+
+                        <b>
+                            Image
+                        </b>
+
+                        <small>
+                            Inspect visual content
+                        </small>
+
+                    </button>
+
+
+                    <button
+                        class="action-card"
+                        data-page="pdf">
+
+                        <b>
+                            PDF
+                        </b>
+
+                        <small>
+                            Extract and analyze documents
+                        </small>
+
+                    </button>
+
+
+                    <button
+                        class="action-card"
+                        data-page="evaluation">
+
+                        <b>
+                            Evaluation
+                        </b>
+
+                        <small>
+                            Compare AI responses
+                        </small>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             TEXT ANALYSIS
+             ===================================================== -->
+
+        <section id="text-page" class="page">
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <h3>
+                        Text Analysis
+                    </h3>
+
+                    <span>
+                        Analyze relevance, quality and safety
+                    </span>
+
+                </div>
+
+
+                <textarea
+                    id="text-input"
+                    placeholder="Enter text you want to analyze..."></textarea>
+
+
+                <button
+                    class="primary-btn"
+                    id="analyze-text-btn">
+
+                    Analyze Text
+
+                </button>
+
+
+                <div
+                    class="result"
+                    id="text-result">
+
+                    Your result will appear here.
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             IMAGE ANALYSIS
+             ===================================================== -->
+
+        <section id="image-page" class="page">
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <h3>
+                        Image Analysis
+                    </h3>
+
+                    <span>
+                        Upload an image for analysis
+                    </span>
+
+                </div>
+
+
+                <input
+                    id="image-input"
+                    type="file"
+                    accept="image/*">
+
+
+                <button
+                    class="primary-btn"
+                    id="analyze-image-btn">
+
+                    Analyze Image
+
+                </button>
+
+
+                <div
+                    class="result"
+                    id="image-result">
+
+                    Your result will appear here.
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             PDF ANALYSIS
+             ===================================================== -->
+
+        <section id="pdf-page" class="page">
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <h3>
+                        PDF Analysis
+                    </h3>
+
+                    <span>
+                        Extract and analyze PDF documents
+                    </span>
+
+                </div>
+
+
+                <input
+                    id="pdf-input"
+                    type="file"
+                    accept=".pdf,application/pdf">
+
+
+                <button
+                    class="primary-btn"
+                    id="analyze-pdf-btn">
+
+                    Analyze PDF
+
+                </button>
+
+
+                <div
+                    class="result"
+                    id="pdf-result">
+
+                    Your result will appear here.
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             MODEL EVALUATION
+             ===================================================== -->
+
+        <section id="evaluation-page" class="page">
+
+
+            <!-- =================================================
+                 EVALUATION INPUTS
+                 ================================================= -->
+
+            <div class="evaluation-grid">
+
+
+                <!-- Automatic Evaluation -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <h3>
+                            Automatic Evaluation
+                        </h3>
+
+                        <span>
+                            Generate and compare two responses
+                        </span>
+
+                    </div>
+
+
+                    <textarea
+                        id="auto-prompt"
+                        placeholder="Enter a prompt for automatic evaluation..."></textarea>
+
+
+                    <button
+                        class="primary-btn"
+                        id="automatic-evaluate-btn">
+
+                        Run Automatic Evaluation
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- Manual Comparison -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <h3>
+                            Manual Comparison
+                        </h3>
+
+                        <span>
+                            Evaluate two existing responses
+                        </span>
+
+                    </div>
+
+
+                    <input
+                        id="manual-prompt"
+                        placeholder="Prompt">
+
+
+                    <textarea
+                        id="model-a"
+                        placeholder="Model A response"></textarea>
+
+
+                    <textarea
+                        id="model-b"
+                        placeholder="Model B response"></textarea>
+
+
+                    <button
+                        class="primary-btn"
+                        id="manual-evaluate-btn">
+
+                        Compare Models
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 EVALUATION RESULT
+                 ================================================= -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <h3>
+                        Evaluation Result
+                    </h3>
+
+                    <span>
+                        Scores and explanation
+                    </span>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     METRICS
+                     ================================================= -->
+
+                <div class="evaluation-metrics">
+
+
+                    <div class="metric-card">
+
+                        <span>
+                            Accuracy
+                        </span>
+
+                        <strong id="metric-accuracy">
+                            --
+                        </strong>
+
+                        <small>
+                            Factual response signal
+                        </small>
+
+                    </div>
+
+
+                    <div class="metric-card">
+
+                        <span>
+                            Relevance
+                        </span>
+
+                        <strong id="metric-relevance">
+                            --
+                        </strong>
+
+                        <small>
+                            Prompt alignment
+                        </small>
+
+                    </div>
+
+
+                    <div class="metric-card">
+
+                        <span>
+                            Quality
+                        </span>
+
+                        <strong id="metric-quality">
+                            --
+                        </strong>
+
+                        <small>
+                            Structure and detail
+                        </small>
+
+                    </div>
+
+
+                    <div class="metric-card">
+
+                        <span>
+                            Safety
+                        </span>
+
+                        <strong id="metric-safety">
+                            --
+                        </strong>
+
+                        <small>
+                            Safety signal
+                        </small>
+
+                    </div>
+
+
+                    <div class="metric-card">
+
+                        <span>
+                            Hallucination Risk
+                        </span>
+
+                        <strong id="metric-hallucination">
+                            --
+                        </strong>
+
+                        <small>
+                            Heuristic risk signal
+                        </small>
+
+                    </div>
+
+
+                    <div class="metric-card">
+
+                        <span>
+                            Overall Score
+                        </span>
+
+                        <strong id="metric-overall">
+                            --
+                        </strong>
+
+                        <small>
+                            Combined evaluation
+                        </small>
+
+                    </div>
+
+
+                    <div class="metric-card">
+
+                        <span>
+                            Evaluation Latency
+                        </span>
+
+                        <strong id="metric-latency">
+                            --
+                        </strong>
+
+                        <small>
+                            Time taken for evaluation
+                        </small>
+
+                    </div>
+
+
+                    <div class="metric-card">
+
+                        <span>
+                            Estimated Cost
+                        </span>
+
+                        <strong id="metric-cost">
+                            --
+                        </strong>
+
+                        <small>
+                            Approximate evaluation cost
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     MODEL COMPARISON
+                     ================================================= -->
+
+                <div class="comparison-box">
+
+
+                    <!-- MODEL A -->
+
+                    <div class="comparison-column">
+
+                        <h4>
+                            Model A
+                        </h4>
+
+
+                        <div id="model-a-score-summary">
+
+                            Waiting for evaluation...
+
+                        </div>
+
+
+                        <div
+                            class="score-bars"
+                            id="model-a-score-bars">
+
+                            <!-- Model A score bars
+                                 generated by JavaScript -->
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- MODEL B -->
+
+                    <div class="comparison-column">
+
+                        <h4>
+                            Model B
+                        </h4>
+
+
+                        <div id="model-b-score-summary">
+
+                            Waiting for evaluation...
+
+                        </div>
+
+
+                        <div
+                            class="score-bars"
+                            id="model-b-score-bars">
+
+                            <!-- Model B score bars
+                                 generated by JavaScript -->
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     DETAILED RESULT
+                     ================================================= -->
+                    <div
+    id="model-recommendation"
+    class="model-recommendation"
+    style="display: none;">
+</div>
+
+
+<div class="report-actions">
+
+    <button
+        class="primary-btn"
+        id="download-report-btn"
+        disabled>
+
+        Download Evaluation Report
+
+    </button>
+
+    <span
+        id="report-status"
+        class="report-status">
+
+        Run an evaluation first.
+
+    </span>
+
+</div>
+
+
+<div
+    class="result"
+    id="evaluation-result">
+
+    Run an evaluation to see the detailed result.
+
+</div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             HISTORY
+             ===================================================== -->
+
+        <section id="history-page" class="page">
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h3>
+                            Analysis History
+                        </h3>
+
+                        <span>
+                            Previous analyses stored locally in SQLite
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        class="danger-btn"
+                        id="clear-history-btn">
+
+                        Clear History
+
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="history-list"
+                    class="history-list">
+
+                    Loading history...
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+
+<script src="/static/script.js"></script>
+
+</body>
+
+</html>
